@@ -12,7 +12,6 @@ export function areArraysAnagrams (arr_1: number[], arr_2: number[]): boolean {
 	if (arr_1.length != arr_2.length) {
 		return false;
 	}
-
 	// Definiujemy tzw "frequency counters" dla obu tablic,
 	// w nich będziemy przechowywać informacje o występujących w tablicach elementach i ich liczbie
 	const count_1: Counter = {}, count_2: Counter = {};
@@ -28,7 +27,6 @@ export function areArraysAnagrams (arr_1: number[], arr_2: number[]): boolean {
 		count_1[key_1] = ++count_1[key_1] || 1;
 		count_2[key_2] = ++count_2[key_2] || 1;
 	}
-
 	// iterujemy po kluczach w pierwszym counterze
 	for (const key in count_1) {
 		if (count_1.hasOwnProperty(key)) {
@@ -37,7 +35,6 @@ export function areArraysAnagrams (arr_1: number[], arr_2: number[]): boolean {
 				return false;
 		}
 	}
-
 	// jeśli znajdziemy się tutaj oznacza to że oba countery są identyczne, a zatem tablice są anagramami 
 	return true;
 };
