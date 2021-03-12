@@ -21,5 +21,5 @@ function insertionSort (arr) {
 }
 
 let arr1 = [2, 1, 9, 76, 4], arr2 = [6, 4, 2, 3, 9, 8];
-insertionSort(arr1);
+console.log(insertionSort(arr1));
 

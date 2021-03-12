@@ -42,6 +42,7 @@ export class MaxBinaryHeap {
 class PriorityNode<T> {
 	constructor (public value: T, public priority: number) { }
 }
+
 export class PriorityQueque<T> {
 	private nodes: PriorityNode<T>[] = [];
 
@@ -56,7 +57,8 @@ export class PriorityQueque<T> {
 			index = greaterIdx;
 		}
 	}
-	public insert (value: T, priority: number): PriorityQueque<T> {
+	
+	public enqueue (value: T, priority: number): PriorityQueque<T> {
 		const node = new PriorityNode<T>(value, priority);
 		this.nodes.push(node);
 		let index = this.nodes.length - 1;
@@ -71,7 +73,7 @@ export class PriorityQueque<T> {
 		return this;
 	}
 
-	public extractMin (): T | undefined {
+	public dequeue (): T | undefined {
 		if (!this.nodes.length) return undefined;
 		const value = this.nodes[0].value;
 		this.nodes[0] = this.nodes[this.nodes.length - 1];
@@ -81,5 +83,9 @@ export class PriorityQueque<T> {
 	}
 	public print (): void {
 		console.log(this.nodes);
+	}
+	public get length (): number 
+	{
+		return this.nodes.length;
 	}
 }

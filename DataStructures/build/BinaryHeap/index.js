@@ -67,7 +67,7 @@ class PriorityQueque {
             index = greaterIdx;
         }
     }
-    insert(value, priority) {
+    enqueue(value, priority) {
         const node = new PriorityNode(value, priority);
         this.nodes.push(node);
         let index = this.nodes.length - 1;
@@ -82,7 +82,7 @@ class PriorityQueque {
         }
         return this;
     }
-    extractMin() {
+    dequeue() {
         if (!this.nodes.length)
             return undefined;
         const value = this.nodes[0].value;
@@ -93,6 +93,9 @@ class PriorityQueque {
     }
     print() {
         console.log(this.nodes);
+    }
+    get length() {
+        return this.nodes.length;
     }
 }
 exports.PriorityQueque = PriorityQueque;

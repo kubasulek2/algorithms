@@ -1,9 +1,10 @@
 /* ==========================================================================
 Selection sort in general has time complexity O(1/2n^2) == O(n^2)
+(n-1)*(n-1 + n-2 ... 1) = 
  ========================================================================== */
 /**
  * @param {number[]} arr
- * @returns {number[]} 
+ * @returns {number[]} (n-1)*(n-1 + n-2 ... 1)
  */
 function selectionSort (arr) {
 	let minIndex;

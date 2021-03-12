@@ -4,7 +4,7 @@ export class HashTable {
 		this.keyMap = new Array(size);
 	}
 
-	private _hash (key) {
+	private _hash (key: string) {
 		let total = 0;
 		const PRIME_NUM = 43;
 		for (let i = 0; i < Math.min(key.length, 100); i++) {

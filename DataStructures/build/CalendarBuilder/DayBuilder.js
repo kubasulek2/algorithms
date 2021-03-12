@@ -110,12 +110,4 @@ class DayBuilder {
     }
 }
 exports.DayBuilder = DayBuilder;
-/*
-[a,b,c] 0+0+0 length / 3
-[a,d,d]
-[a,d,d]
-[a,d,d]
-[a,e,e]
-[f,f,f]
-*/ 
 //# sourceMappingURL=DayBuilder.js.map
