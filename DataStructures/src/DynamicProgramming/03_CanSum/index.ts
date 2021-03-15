@@ -49,3 +49,20 @@ export function canSumNotUniqueWithCount (numbers: number[], targetSum: number):
 	counter = 0;
 
 }
+
+
+export function canSumTab (numbers: number[], targetSum: number): boolean
+{
+	const tab: boolean[] = Array(targetSum + 1).fill(false);
+	tab[0] = true;
+	for (let i = 0; i < tab.length; i++) {
+		if (tab[i]) {
+			for (const num of numbers) {
+				/* skip the rest if you found target sum is possible */
+				if(i + num === tab.length) return true;
+				if (i + num < tab.length) tab[i + num] = true;
+			}
+		}
+	}
+	return tab[targetSum];
+}
